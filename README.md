@@ -1,16 +1,150 @@
-# React + Vite
+# 📈 Binance Live BTCUSDT Chart (React + WebSocket)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a real-time cryptocurrency chart application that streams live BTCUSDT trade data from Binance WebSocket API and visualizes it in a continuously updating chart.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Project Purpose
 
-## React Compiler
+The main goal of this project is to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Connect to Binance WebSocket API
+- Receive real-time BTCUSDT trade data
+- Process and transform streaming data
+- Display a live updating chart using React
 
-## Expanding the ESLint configuration
+This project was developed as part of a real-time frontend data visualization assignment.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+##  Technologies Used
+
+- React (Client-side)
+- Tailwind CSS
+- Recharts 2.15.1
+- WebSocket API
+- Binance Trade Stream
+
+---
+
+##  Architecture Overview
+
+The project is structured using a modular architecture:
+
+### 1. Custom Hook (useBinanceTrades)
+Responsible for:
+
+- Opening WebSocket connection
+- Receiving live trade messages
+- Transforming trade data
+- Managing connection status
+- Providing data to components
+
+### 2. LiveChart Component
+
+Responsible for:
+
+- Rendering real-time chart
+- Handling visualization
+- Updating chart on new trades
+
+### 3. App Component
+
+Responsible for:
+
+- UI layout
+- Displaying current price
+- Showing connection status
+- Integrating chart component
+
+---
+
+##  WebSocket Integration
+
+Connection endpoint:
+
+```
+wss://stream.binance.com:9443/ws/btcusdt@trade
+```
+
+Incoming trade data is parsed and transformed into:
+
+```
+{
+  price: number,
+  time: string,
+  rawTime: number
+}
+```
+
+Latest 25 trades are stored to maintain performance.
+
+---
+
+##  Chart Implementation
+
+- Library: Recharts
+- Chart Type: Area Chart
+- Live updates enabled
+- Animation disabled for performance
+- Gradient fill applied
+- Custom tooltip styling
+
+---
+
+##  Installation
+
+Clone repository:
+
+```
+git clone https://github.com/USERNAME/REPO.git
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run development server:
+
+```
+npm run dev
+```
+
+---
+
+##  Usage
+
+Open browser:
+
+```
+http://localhost:5173
+```
+
+Live BTCUSDT trades will start streaming automatically.
+
+---
+
+##  What I Learned
+
+- Real-time WebSocket data handling
+- React state optimization for streaming data
+- Custom React hooks for network logic
+- Performance considerations in live charts
+- Data visualization principles
+
+---
+
+##  Future Improvements
+
+- WebSocket reconnection strategy
+- Trade aggregation system
+- FPS throttling
+- Price change indicators
+- Multi-symbol support
+- Order book visualization
+
+---
+
+
