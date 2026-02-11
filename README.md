@@ -97,7 +97,7 @@ Latest 25 trades are stored to maintain performance.
 Clone repository:
 
 ```
-git clone https://github.com/USERNAME/REPO.git
+git clone https://github.com/cerenoezkan/binance-live-btcusdt-chart.git
 ```
 
 Install dependencies:
@@ -121,6 +121,7 @@ Open browser:
 ```
 http://localhost:5173
 ```
+![BTC/USDT Live Dashboard](./screenshot.png)
 
 Live BTCUSDT trades will start streaming automatically.
 
