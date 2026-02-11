@@ -19,11 +19,12 @@ This project was developed as part of a real-time frontend data visualization as
 
 ##  Technologies Used
 
-- React (Client-side)
+- React (Client-Side)
 - Tailwind CSS
 - Recharts 2.15.1
-- WebSocket API
-- Binance Trade Stream
+- Binance WebSocket API
+- reui (installed for UI component extension)
+
 
 ---
 
